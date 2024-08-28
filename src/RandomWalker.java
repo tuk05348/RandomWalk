@@ -15,12 +15,31 @@ public class RandomWalker {
 		}
 		int steps = Integer.parseInt(args[0]);
 		RandomWalker walker = new RandomWalker(steps);
+		walker.walk();
 	}
 	
 	public void walk() {
-		
+		for(int i=0; i<this.steps; i++) {
+			this.step();
+			System.out.println(this.point.toString());
+		}
+		System.out.println("squared distance = " + this.point.getSquaredDistance());
 	}
 	
-	
+	public void step() {
+		int step = (int) (Math.random() * 4) + 1;
+		if(step == 1) {
+			this.point.moveByX(1);
+		}
+		else if(step == 2) {
+			this.point.moveByX(-1);
+		}
+		else if(step == 3) {
+			this.point.moveByY(1);
+		}
+		else {
+			this.point.moveByY(-1);
+		}
+	}
 
 }

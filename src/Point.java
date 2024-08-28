@@ -24,6 +24,10 @@ public class Point {
 		return this.y;
 	}
 	
+	public int getSquaredDistance() {
+		return (this.x * this.x) + (this.y * this.y);
+	}
+	
 	public String toString() {
 		return "(" + this.getX() + ", " + this.getY() + ")";
 	}
