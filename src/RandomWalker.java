@@ -22,7 +22,7 @@ public class RandomWalker {
 	public int walk() {
 		for(int i=0; i<this.steps; i++) {
 			this.step();
-			System.out.println(this.point.toString());
+			//System.out.println(this.point.toString());
 		}
 		return this.point.getSquaredDistance();
 	}
@@ -41,6 +41,10 @@ public class RandomWalker {
 		else {
 			this.point.moveByY(-1);
 		}
+	}
+	
+	public void resetDistance() {
+		this.point.clear();
 	}
 
 }
