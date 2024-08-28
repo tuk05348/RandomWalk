@@ -15,15 +15,16 @@ public class RandomWalker {
 		}
 		int steps = Integer.parseInt(args[0]);
 		RandomWalker walker = new RandomWalker(steps);
-		walker.walk();
+		int dist = walker.walk();
+		System.out.println("squared distance = " + dist);
 	}
 	
-	public void walk() {
+	public int walk() {
 		for(int i=0; i<this.steps; i++) {
 			this.step();
 			System.out.println(this.point.toString());
 		}
-		System.out.println("squared distance = " + this.point.getSquaredDistance());
+		return this.point.getSquaredDistance();
 	}
 	
 	public void step() {
